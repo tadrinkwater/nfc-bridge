@@ -1,0 +1,35 @@
+2"}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NFC Bridge</title>
+<script>
+const params = new URLSearchParams(window.location.search);
+const user = params.get("user");
+const tool = params.get("tool");
+
+// Store scanned values
+if(user){
+localStorage.setItem("nfc_user", user);
+document.body.innerHTML = "<h2>User registered ✔️<br>Now scan tool tag</h2>";
+}
+
+if(tool){
+const storedUser = localStorage.getItem("nfc_user");
+if(storedUser){
+const formURL = "https://app.smartsheet.com/b/form/1d43ab9de53c4510838e6ed90c972f0b"
++ "?UserID=" + encodeURIComponent(storedUser)
++ "&ToolID=" + encodeURIComponent(tool);
+
+window.location.href = formURL;
+} else {
+document.body.innerHTML = "<h2>No user scanned ❌<br>Scan ID tag first</h2>";
+}
+}
+</script>
+</head>
+<body>
+<h2>Ready to scan...</h2>
+</body>
+</h
