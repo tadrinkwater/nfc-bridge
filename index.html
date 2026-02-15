@@ -20,7 +20,7 @@ const storedUser = localStorage.getItem("nfc_user");
 if(storedUser){
 const formURL = "https://app.smartsheet.com/b/form/019c51824f0475fd8bf178284fbb0ecb"
 + "?DutyManagerName=" + encodeURIComponent(storedUser)
-+ "&ToolID=" + encodeURIComponent(tool);
++ "&Part Number=" + encodeURIComponent(tool);
 
 window.location.href = formURL;
 } else {
