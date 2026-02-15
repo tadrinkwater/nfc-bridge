@@ -18,8 +18,8 @@ document.body.innerHTML = "<h2>User registered ✔️<br>Now scan tool tag</h2>"
 if(tool){
 const storedUser = localStorage.getItem("nfc_user");
 if(storedUser){
-const formURL = "https://app.smartsheet.com/b/form/1d43ab9de53c4510838e6ed90c972f0b"
-+ "?UserID=" + encodeURIComponent(storedUser)
+const formURL = "https://app.smartsheet.com/b/form/019c51824f0475fd8bf178284fbb0ecb"
++ "?Duty Manager Name=" + encodeURIComponent(storedUser)
 + "&ToolID=" + encodeURIComponent(tool);
 
 window.location.href = formURL;
